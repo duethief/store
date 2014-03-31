@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<context:property-placeholder location="classpath:spring.properties"/>
+	<bean id="connectionFactory" class="com.bookstore.dao.ConnectionFactory" init-method="init">
+        <property name="connectionString" value="${connect.url}"/>
+        <property name="driverName" value="${connect.driver}"/>
+        <property name="username" value="${connect.username}"/>
+        <property name="password" value="${connect.password}"/>
+    </bean>
+    <context:component-scan base-package="com.bookstore.dao.sqlExecutor"/>
+</beans>
