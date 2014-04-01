@@ -36,6 +36,7 @@ eclipse{
 dependencies {
     def springVersion = "4.0.2.RELEASE"
     compile 'org.slf4j:slf4j-api:1.7.5'
+    compile 'ch.qos.logback:logback-classic:1.1.1'
     compile 'mysql:mysql-connector-java:5.1.27'
     compile "org.springframework:spring-context:${springVersion}"
     compile "org.springframework:spring-context-support:${springVersion}"

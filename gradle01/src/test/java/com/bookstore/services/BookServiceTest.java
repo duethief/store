@@ -26,7 +26,7 @@ import com.bookstore.entities.User;
 import com.bookstore.services.BookService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("/jdbcTemplateContext.xml")
+@ContextConfiguration("/springDataContext.xml")
 public class BookServiceTest {
 	@Autowired
 	private ApplicationContext context;
