@@ -19,7 +19,7 @@
                 #else
                     <td>분실</td>
                 #end
-                <td>${book.comment}</td>
+                <td>$book.comment</td>
             </tr>
             #end
         </tbody>

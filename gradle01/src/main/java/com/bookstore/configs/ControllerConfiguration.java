@@ -7,6 +7,8 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 import org.springframework.web.servlet.view.velocity.VelocityConfig;
@@ -32,7 +34,7 @@ public class ControllerConfiguration extends WebMvcConfigurerAdapter {
         InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
         internalResourceViewResolver.setPrefix("/WEB-INF/jsp/");
         internalResourceViewResolver.setSuffix(".jsp");
-        internalResourceViewResolver.setOrder(3);
+        internalResourceViewResolver.setOrder(4);
         return internalResourceViewResolver;
     }
 
@@ -46,7 +48,7 @@ public class ControllerConfiguration extends WebMvcConfigurerAdapter {
     @Bean
     public TilesViewResolver tilesViewResolver() {
         TilesViewResolver tilesViewResolver = new TilesViewResolver();
-        tilesViewResolver.setOrder(2);
+        tilesViewResolver.setOrder(3);
         return tilesViewResolver;
     }
 
@@ -64,9 +66,9 @@ public class ControllerConfiguration extends WebMvcConfigurerAdapter {
     @Bean
     public VelocityViewResolver velocityViewResolver() {
         VelocityViewResolver viewResolver = new VelocityViewResolver();
-        viewResolver.setContentType("text/html;charset=UTF-8");
+        viewResolver.setContentType("text/html; charset=UTF-8");
         viewResolver.setSuffix(".vm");
-        viewResolver.setOrder(1);
+        viewResolver.setOrder(2);
         return viewResolver;
     }
 }
