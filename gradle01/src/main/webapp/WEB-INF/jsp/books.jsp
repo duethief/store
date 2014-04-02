@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title></title>
@@ -24,8 +26,21 @@
         <tbody>
             <c:forEach var="book" items="${books}">
                 <tr>
-                    <td>${book.title}</td>
-                    <c:set var="status" value="일반" />
+                    <td>${book.name}</td>
+                    <c:set var="status" value="일반"/>
+                    <c:choose>
+                        <c:when test="${book.status eq 'CanRent'}">
+                            <c:set var="status" value="일반"/>
+                        </c:when>
+                        <c:when test="${book.status eq 'RentNow'}">
+                            <c:set var="status" value="대여중"/>
+                        </c:when>
+                        <c:otherwise>
+                            <c:set var="status" value="분실중"/>
+                        </c:otherwise>
+                    </c:choose>
+                    <td>${status}</td>
+                    <td>${book.comment}</td>
                 </tr>
             </c:forEach>
         </tbody>

@@ -7,6 +7,8 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 /**
  * Created by InSeok on 2014-04-01.
@@ -27,5 +29,19 @@ public class ControllerConfiguration extends WebMvcConfigurerAdapter {
         internalResourceViewResolver.setSuffix(".jsp");
         internalResourceViewResolver.setOrder(1);
         return internalResourceViewResolver;
+    }
+
+    @Bean
+    public TilesConfigurer tilesConfigurer() {
+        TilesConfigurer tilesConfigurer = new TilesConfigurer();
+        tilesConfigurer.setDefinitions(new String[]{"/WEB-INF/jsp/tiles-config.xml"});
+        return tilesConfigurer;
+    }
+
+    @Bean
+    public TilesViewResolver tilesViewResolver() {
+        TilesViewResolver tilesViewResolver = new TilesViewResolver();
+        tilesViewResolver.setOrder(1);
+        return tilesViewResolver;
     }
 }
