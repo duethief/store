@@ -74,6 +74,8 @@ dependencies {
     providedCompile 'javax.websocket:javax.websocket-api:1.0'
     providedCompile 'javax.servlet:jsp-api:2.0'
     providedCompile "org.apache.tomcat:tomcat-servlet-api:${tomcatVersion}"
+
+    compile 'org.apache.tiles:tiles-jsp:3.0.3'
 }
 
 sourceSets {

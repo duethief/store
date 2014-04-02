@@ -27,7 +27,7 @@ public class ControllerConfiguration extends WebMvcConfigurerAdapter {
         InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
         internalResourceViewResolver.setPrefix("/WEB-INF/jsp/");
         internalResourceViewResolver.setSuffix(".jsp");
-        internalResourceViewResolver.setOrder(1);
+        internalResourceViewResolver.setOrder(2);
         return internalResourceViewResolver;
     }
 
