@@ -76,6 +76,7 @@ dependencies {
 
     compile 'jstl:jstl:1.2'
     compile 'org.apache.velocity:velocity:1.7'
+    compile 'org.freemarker:freemarker:2.3.20'
     compile 'org.apache.tiles:tiles-jsp:3.0.3'
 }
 

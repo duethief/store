@@ -71,4 +71,23 @@ public class ControllerConfiguration extends WebMvcConfigurerAdapter {
         viewResolver.setOrder(2);
         return viewResolver;
     }
+
+    @Bean
+    public FreeMarkerConfigurer freeMarkerConfigurer() {
+        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
+        freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/freemarker");
+        Properties properties = new Properties();
+        properties.put("default_encoding", "UTF-8");
+        freeMarkerConfigurer.setFreemarkerSettings(properties);
+        return freeMarkerConfigurer;
+    }
+
+    @Bean
+    public FreeMarkerViewResolver freeMarkerViewResolver() {
+        FreeMarkerViewResolver viewResolver = new FreeMarkerViewResolver();
+        viewResolver.setContentType("text/html; charset=UTF-8");
+        viewResolver.setSuffix(".ftl");
+        viewResolver.setOrder(1);
+        return viewResolver;
+    }
 }
