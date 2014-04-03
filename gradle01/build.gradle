@@ -120,6 +120,21 @@ idea {
     }
 }
 
+import org.apache.tools.ant.taskdefs.condition.Os
+task bowerInstall(type:Exec, description : 'copy js files dependencies that is defined in Bower.js', group: 'build') {
+    if(Os.isFamily(Os.FAMILY_WINDOWS)) {
+        commandLine 'bower.cmd', 'install'
+        commandLine 'bower-installer.cmd'
+    } else {
+        commandLine 'bower', 'install'
+        commandLine 'bower-installer'
+    }
+}
+
+war {
+    dependsOn bowerInstall
+}
+
 tomcatRun {
     contextPath = ""
     URIEncoding = 'UTF-8'
