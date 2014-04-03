@@ -1,0 +1,28 @@
+@extends("layout.html")
+@args List<com.bookstore.entities.Book> books
+    @section("title") {
+    책리스트입니다.
+    }
+    @section("content") {
+    @message("label.welcome") <br/>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>책제목</td>
+            <td>빌린 사람</td>
+        </tr>
+        @for(Book book : books) {
+        <tr>
+            <td>@book.getName()</td>
+            <td>
+                @if(book.getRentUser() == null) {
+                빌린 사람이 없어요.
+                } else {
+                빌린 사람이 있어요.
+                }
+            </td>
+        </tr>
+        }
+        </thead>
+    </table>
+    }
