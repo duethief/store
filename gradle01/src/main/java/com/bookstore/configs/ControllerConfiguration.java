@@ -34,7 +34,7 @@ public class ControllerConfiguration extends WebMvcConfigurerAdapter {
         InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
         internalResourceViewResolver.setPrefix("/WEB-INF/jsp/");
         internalResourceViewResolver.setSuffix(".jsp");
-        internalResourceViewResolver.setOrder(4);
+        internalResourceViewResolver.setOrder(3);
         return internalResourceViewResolver;
     }
 
@@ -48,7 +48,7 @@ public class ControllerConfiguration extends WebMvcConfigurerAdapter {
     @Bean
     public TilesViewResolver tilesViewResolver() {
         TilesViewResolver tilesViewResolver = new TilesViewResolver();
-        tilesViewResolver.setOrder(3);
+        tilesViewResolver.setOrder(1);
         return tilesViewResolver;
     }
 
@@ -87,7 +87,7 @@ public class ControllerConfiguration extends WebMvcConfigurerAdapter {
         FreeMarkerViewResolver viewResolver = new FreeMarkerViewResolver();
         viewResolver.setContentType("text/html; charset=UTF-8");
         viewResolver.setSuffix(".ftl");
-        viewResolver.setOrder(1);
+        viewResolver.setOrder(4);
         return viewResolver;
     }
 }

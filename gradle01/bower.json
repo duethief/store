@@ -14,32 +14,36 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.1.1"
+    "bootstrap": "~3.1.1",
+    "angular": "~1.2.16"
   },
-    "install" : {
-        "path" : {
-            "css" : "src/main/webapp/lib/css",
-            "js" : "src/main/webapp/lib/js",
-            "eot" : "src/main/webapp/lib/fonts",
-            "svg" : "src/main/webapp/lib/fonts",
-            "ttf" : "src/main/webapp/lib/fonts",
-            "woff" : "src/main/webapp/lib/fonts",
-            "map" : "src/main/webapp/lib/js"
-        },
-        "sources" : {
-            "jquery" : [
-                "bower_components/jquery/dist/jquery.min.js",
-                "bower_components/jquery/dist/jquery.min.map"
-            ],
-            "bootstrap" : [
-                "bower_components/bootstrap/dist/css/bootstrap.min.css",
-                "bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
-                "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot",
-                "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg",
-                "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf",
-                "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff",
-                "bower_components/bootstrap/dist/js/bootstrap.min.js"
-            ]
-        }
+  "install": {
+    "path": {
+      "css": "src/main/webapp/lib/css",
+      "js": "src/main/webapp/lib/js",
+      "eot": "src/main/webapp/lib/fonts",
+      "svg": "src/main/webapp/lib/fonts",
+      "ttf": "src/main/webapp/lib/fonts",
+      "woff": "src/main/webapp/lib/fonts",
+      "map": "src/main/webapp/lib/js"
+    },
+    "sources": {
+      "jquery": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "bower_components/jquery/dist/jquery.min.map"
+      ],
+      "bootstrap": [
+        "bower_components/bootstrap/dist/css/bootstrap.min.css",
+        "bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff",
+        "bower_components/bootstrap/dist/js/bootstrap.min.js"
+      ],
+      "angular": [
+        "bower_components/angular/angular.min.js"
+      ]
     }
+  }
 }
