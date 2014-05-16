@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingModule">
+<head>
+    <meta charset="utf-8">
+    <title>쇼핑하기</title>
+</head>
+<body ng-controller="ShoppingController">
+    <h1>쇼핑하기</h1>
+    <div ng-repeat="item in items">
+        <span>{{item.title}}</span>
+        <span>{{item.description}}</span>
+        <span>{{item.price | currency}}</span>
+    </div>
+    <script src="../../lib/js/angular.min.js"></script>
+    <script>
+        var shoppingModule = angular.module("ShoppingModule", []);
+
+        shoppingModule.factory("Items", function () {
+            var items = {};
+            items.query = function () {
+                return [
+                    {
+                        title: '페인트 그릇',
+                        description: "페인트를 담아 쓸 수 있는 용기",
+                        quantity: 8
+                    },
+                    {
+                        title: '땡땡이 리본',
+                        description: "물방울 무늬가 자수된 리본",
+                        quantity: 17
+                    },
+                    {
+                        title: '공깃돌',
+                        description: "공기 놀이를 위한 오색 조약돌",
+                        quantity: 5
+                    }
+                ];
+            };
+            return items;
+        });
+
+        shoppingModule.controller("ShoppingController", function ($scope, Items) {
+            $scope.items = Items.query();
+        });
+    </script>
+</body>
+</html>

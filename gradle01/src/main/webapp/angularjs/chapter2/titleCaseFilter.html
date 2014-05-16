@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="HomeModule">
+<head>
+    <meta charset="utf-8">
+    <title>TitleCaps</title>
+</head>
+<body ng-controller="HomeController">
+    <h1>{{pageHeading | titleCase}}</h1>
+    <script src="../../lib/js/angular.min.js"></script>
+    <script>
+        var homeModule = angular.module("HomeModule", []);
+
+        homeModule.filter("titleCase", function () {
+            return function (input) {
+                var words = input.split(' ');
+                for (var i in words) {
+                    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+                }
+                return words.join(' ');
+            };
+        });
+
+        homeModule.controller("HomeController", function ($scope) {
+            $scope.pageHeading = "behold the majesty of your page title";
+        })
+    </script>
+</body>
+</html>

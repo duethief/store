@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <script src="../../lib/js/angular.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs//angular.js"></script>
+    <style type="text/css">
+        .error {
+            background-color: red;
+        }
+
+        .warning {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="HeaderController">
+        <div ng-class="{error: isError, warning: isWarning}">{{messageText}}</div>
+        <button ng-click="showError()">에러 시연하기</button>
+        <button ng-click="showWarning()">경고 시연하기</button>
+    </div>
+    <div></div>
+    <script>
+        var MyAppModule = angular.module("myApp", []);
+        MyAppModule.controller("HeaderController",
+                function ($scope) {
+                    $scope.isError = false;
+                    $scope.isWarning = false;
+
+                    $scope.showError = function () {
+                        $scope.messageText = '에러입니다.';
+                        $scope.isError = true;
+                        $scope.isWarning = false;
+                    };
+
+                    $scope.showWarning = function () {
+                        $scope.messageText = '경고에 불과합니다. 계속 진행하세요!';
+                        $scope.isWarning = true;
+                        $scope.isError = false;
+                    }
+                });
+    </script>
+</body>
+</html>

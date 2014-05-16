@@ -15,7 +15,8 @@
   ],
   "dependencies": {
     "bootstrap": "~3.1.1",
-    "angular": "~1.2.16"
+    "angular": "~1.2.16",
+    "angular-route": "~1.2.16"
   },
   "install": {
     "path": {
@@ -43,6 +44,9 @@
       ],
       "angular": [
         "bower_components/angular/angular.min.js"
+      ],
+      "angular-route": [
+          "bower_components/angular-route/angular-route.min.js"
       ]
     }
   }

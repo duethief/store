@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <script src="../../lib/js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="ParentController">
+        <div>
+            Ship staff: {{firstName}} {{lastName}} and {{crewmen}} crewmen.
+        </div>
+        <div ng-controller="ChildController">
+            Ship staff: {{firstName}} {{lastName}} and {{crewmen}} crewmen.
+        </div>
+    </div>
+    <script>
+        var MyAppModule = angular.module("myApp", []);
+        MyAppModule.controller("ParentController",
+                function ($scope) {
+                    $scope.firstName = 'Captain';
+                    $scope.lastName = 'Nemo';
+                    $scope.crewmen = 30;
+                });
+        MyAppModule.controller("ChildController",
+                function ($scope) {
+                    $scope.lastName = 'Columbus';
+                    //$scope.crewmen = $scope.crewmen + 56;
+                    $scope.$parent.crewmen = $scope.crewmen + 56;
+                });
+    </script>
+</body>
+</html>

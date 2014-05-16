@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <script src="../../lib/js/angular.min.js"></script>
+</head>
+<body ng-controller="TextController">
+    <p>{{someText.messages}}</p>
+    <script>
+        var myAppModule = angular.module('myApp', []);
+
+        myAppModule.controller('TextController',
+                function TextController($scope) {
+                    var someText = {};
+                    someText.messages = '지금 여러분의 여정은 시작됐습니다.';
+                    $scope.someText = someText;
+                });
+    </script>
+</body>
+</html>
